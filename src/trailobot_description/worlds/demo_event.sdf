@@ -1,0 +1,275 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="demo_environment">
+    
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin filename="libignition-gazebo-clock-system.so"
+            name="ignition::gazebo::systems::Clock">
+        <use_sim_time>true</use_sim_time>
+        <time_scaling_factor>1.0</time_scaling_factor>
+    </plugin>
+    <plugin
+        filename="libignition-gazebo-physics-system.so"
+        name="ignition::gazebo::systems::Physics">
+    </plugin>
+    <plugin
+        filename="libignition-gazebo-user-commands-system.so"
+        name="ignition::gazebo::systems::UserCommands">
+    </plugin>
+    <plugin
+        filename="libignition-gazebo-scene-broadcaster-system.so"
+        name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+    
+    <!-- Scene Settings -->
+    <scene>
+      <ambient>0.4 0.4 0.4 1.0</ambient>
+      <background>0.7 0.7 0.7 1.0</background>
+      <shadows>true</shadows>
+      <grid>false</grid>
+    </scene>
+    
+    <!-- Ground Plane (reduced to 5x5m) -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="ground_link">
+        <collision name="ground_collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>15 15</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="ground_visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>15 15</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Wall 1 (Vertical) -->
+    <model name="wall_1">
+      <static>true</static>
+      <pose>2.25 -0.0 0.0 0 0 0</pose>
+      <link name="wall_link">
+        <collision name="wall_collision">
+          <geometry>
+            <box>
+              <size>0.1 2.0 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="wall_visual">
+          <geometry>
+            <box>
+              <size>0.1 2.0 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.6 0.4 1</ambient>
+            <diffuse>0.8 0.6 0.4 1</diffuse>
+            <specular>0.3 0.2 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+    <model name="wall_2">
+      <static>true</static>
+      <pose>1.0 1.0 0.0 0 0 0</pose>
+      <link name="wall_link">
+        <collision name="wall_collision">
+          <geometry>
+            <box>
+              <size>2.5 0.1 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="wall_visual">
+          <geometry>
+            <box>
+              <size>2.5 0.1 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.6 0.4 1</ambient>
+            <diffuse>0.8 0.6 0.4 1</diffuse>
+            <specular>0.3 0.2 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_3">
+      <static>true</static>
+      <pose>0.5 -1.0 0.0 0 0 0</pose>
+      <link name="wall_link">
+        <collision name="wall_collision">
+          <geometry>
+            <box>
+              <size>3.5 0.1 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="wall_visual">
+          <geometry>
+            <box>
+              <size>3.5 0.1 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.6 0.4 1</ambient>
+            <diffuse>0.8 0.6 0.4 1</diffuse>
+            <specular>0.3 0.2 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_4">
+      <static>true</static>
+      <pose>-1.25 1.0 0.0 0 0 0</pose>
+      <link name="wall_link">
+        <collision name="wall_collision">
+          <geometry>
+            <box>
+              <size>0.1 4.0 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="wall_visual">
+          <geometry>
+            <box>
+              <size>0.1 4.0 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.6 0.4 1</ambient>
+            <diffuse>0.8 0.6 0.4 1</diffuse>
+            <specular>0.3 0.2 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_5">
+      <static>true</static>
+      <pose>-0.75 3.0 0.0 0 0 0</pose>
+      <link name="wall_link">
+        <collision name="wall_collision">
+          <geometry>
+            <box>
+              <size>1.0 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="wall_visual">
+          <geometry>
+            <box>
+              <size>1.0 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.6 0.4 1</ambient>
+            <diffuse>0.8 0.6 0.4 1</diffuse>
+            <specular>0.3 0.2 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_6">
+      <static>true</static>
+      <pose>-0.25 2.0 0.0 0 0 0</pose>
+      <link name="wall_link">
+        <collision name="wall_collision">
+          <geometry>
+            <box>
+              <size>0.1 2.0 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="wall_visual">
+          <geometry>
+            <box>
+              <size>0.1 2.0 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.6 0.4 1</ambient>
+            <diffuse>0.8 0.6 0.4 1</diffuse>
+            <specular>0.3 0.2 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    
+    
+    
+    <!-- Lighting -->
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    
+    <!-- Additional Point Light -->
+    <light name="point_light_1" type="point">
+      <pose>0 0 3 0 0 0</pose>
+      <diffuse>0.9 0.9 0.7 1</diffuse>
+      <specular>0.9 0.9 0.7 1</specular>
+      <attenuation>
+        <range>8</range>
+        <constant>0.5</constant>
+        <linear>0.3</linear>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+    </light>
+    
+    <!-- GUI Plugin -->
+    <plugin filename="GzScene3D" name="3D View">
+      <ignition-gui>
+        <title>3D View</title>
+        <property type="bool" key="showTitleBar">false</property>
+        <property type="string" key="state">docked</property>
+      </ignition-gui>
+      <engine>ogre2</engine>
+      <scene>scene</scene>
+      <ambient_light>0.4 0.4 0.4</ambient_light>
+      <background_color>0.7 0.7 0.7</background_color>
+      <camera_pose>0 0 5 0 1.57 3.14</camera_pose>
+    </plugin>
+  </world>
+</sdf>

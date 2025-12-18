@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="camera" params="name">
+        <link name="${name}_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="1.57 0.0 0"/>
+                <geometry>
+                    <!-- <box size="${realsense_length} ${realsense_width} ${realsense_height}"/> -->
+                    <mesh filename="file://$(find trailobot_description)/meshes/d415.dae" scale="0.6 0.6 0.6"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                <box size="${realsense_length} ${realsense_width} ${realsense_height}"/>
+                </geometry>
+            </collision>
+
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="${mass_realsense}"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+            </inertial>
+        </link>
+
+        <joint name="${name}_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="${name}_link"/>
+            <xacro:if value="${name == 'CameraFR'}">
+                <origin xyz="${0.55*base_length+0.02} -0.08 -0.12" rpy="0 0 0.785398"/>
+            </xacro:if>
+            <xacro:if value="${name == 'CameraFL'}">
+                <origin xyz="${0.55*base_length+0.02} 0.09 -0.12" rpy="0 0 -0.785398"/>
+            </xacro:if>
+        </joint>
+    </xacro:macro>
+</robot>

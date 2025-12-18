@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="lidar" params="name">
+    <link name="${name}_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.125"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+        </inertial>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+            <cylinder radius="${lidar_radius}" length="${lidar_length}"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="${lidar_radius}" length="${lidar_length}"/>
+            </geometry>
+            <material name="Red">
+                <color rgba="1 0 0.0 0.8"/>
+            </material>
+        </visual>
+    </link>
+    
+    
+    <joint name="${name}_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="${name}_link"/>
+        <xacro:if value="${name == 'LidarFR'}">
+          <origin xyz="${0.5*base_length + 0.05} ${-0.4*base_width -0.01} ${-base_height/2 + 0.04}" rpy="0 0 0"/>
+        </xacro:if>
+        <xacro:if value="${name == 'LidarBL'}">
+          <origin xyz="${-0.37*base_length - 0.01} ${0.4*base_width+0.03} ${-base_height/2 - 0.01}" rpy="0 0 ${PI}"/>
+        </xacro:if>
+    </joint>
+  </xacro:macro>
+</robot>

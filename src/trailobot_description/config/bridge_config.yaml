@@ -1,0 +1,138 @@
+---
+# Clock bridge (sim time)
+- ros_topic_name: "/clock"
+  gz_topic_name: "/clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "ignition.msgs.Clock"
+  direction: IGN_TO_ROS
+
+# IMU bridge
+- ros_topic_name: "trailobot/imu"
+  gz_topic_name: "/imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "ignition.msgs.IMU"
+  direction: IGN_TO_ROS
+
+# Odometry bridge
+- ros_topic_name: "trailobot/odom"
+  gz_topic_name: "/odom"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "ignition.msgs.Odometry"
+  direction: IGN_TO_ROS
+
+# Ultrasonic bridge
+- ros_topic_name: "/ultraFL"
+  gz_topic_name: "/ultraFL"
+  ros_type_name: "sensor_msgs/msg/Range"
+  gz_type_name: "ignition.msgs.Range"
+  direction: IGN_TO_ROS
+
+- ros_topic_name: "/ultraFR"
+  gz_topic_name: "/ultraFR"
+  ros_type_name: "sensor_msgs/msg/Range"
+  gz_type_name: "ignition.msgs.Range"
+  direction: IGN_TO_ROS
+
+- ros_topic_name: "/ultraBL"
+  gz_topic_name: "/ultraBL"
+  ros_type_name: "sensor_msgs/msg/Range"
+  gz_type_name: "ignition.msgs.Range"
+  direction: IGN_TO_ROS
+
+- ros_topic_name: "/ultraBR"
+  gz_topic_name: "/ultraBR"
+  ros_type_name: "sensor_msgs/msg/Range"
+  gz_type_name: "ignition.msgs.Range"
+  direction: IGN_TO_ROS
+
+- ros_topic_name: "/ultraRB"
+  gz_topic_name: "/ultraRB"
+  ros_type_name: "sensor_msgs/msg/Range"
+  gz_type_name: "ignition.msgs.Range"
+  direction: IGN_TO_ROS
+
+# Joint state bridge
+- ros_topic_name: "/joint_states"
+  gz_topic_name: "/world/ware_house/model/trailobot/joint_state"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "ignition.msgs.Model"
+  direction: IGN_TO_ROS
+
+# Command velocity bridge
+- ros_topic_name: "trailobot/cmd_vel"
+  gz_topic_name: "/cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "ignition.msgs.Twist"
+  direction: BIDIRECTIONAL
+
+# TF bridge (optional)
+- ros_topic_name: "/tf"
+  gz_topic_name: "/tf"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "ignition.msgs.Pose_V"
+  direction: IGN_TO_ROS
+
+# Laser scan bridge BL
+- ros_topic_name: "/scan_left"
+  gz_topic_name: "/scan_left"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "ignition.msgs.LaserScan"
+  direction: IGN_TO_ROS
+
+- ros_topic_name: "/scan_left/points"
+  gz_topic_name: "/scan_left/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "ignition.msgs.PointCloudPacked"
+  direction: IGN_TO_ROS
+
+# Laser scan bridge FR
+- ros_topic_name: "/scan_right"
+  gz_topic_name: "/scan_right"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "ignition.msgs.LaserScan"
+  direction: IGN_TO_ROS
+
+- ros_topic_name: "/scan_right/points"
+  gz_topic_name: "/scan_right/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "ignition.msgs.PointCloudPacked"
+  direction: IGN_TO_ROS
+
+# Camera bridge left
+- ros_topic_name: "/depth_camera_left/camera_info"
+  gz_topic_name: "/depth_camera_left/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "ignition.msgs.CameraInfo"
+  direction: IGN_TO_ROS
+
+- ros_topic_name: "trailobot/depth_camera_left/points"
+  gz_topic_name: "/depth_camera_left/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "ignition.msgs.PointCloudPacked"
+  direction: IGN_TO_ROS
+
+- ros_topic_name: "trailobot/depth_camera_left/image"
+  gz_topic_name: "/depth_camera_left/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  direction: IGN_TO_ROS
+
+# Camera bridge Right
+- ros_topic_name: "trailobot/depth_camera_right/camera_info"
+  gz_topic_name: "/depth_camera_right/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "ignition.msgs.CameraInfo"
+  direction: IGN_TO_ROS
+
+- ros_topic_name: "trailobot/depth_camera_right/points"
+  gz_topic_name: "/depth_camera_right/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "ignition.msgs.PointCloudPacked"
+  direction: IGN_TO_ROS
+
+- ros_topic_name: "trailobot/depth_camera_right/image"
+  gz_topic_name: "/depth_camera_right/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  direction: IGN_TO_ROS
+

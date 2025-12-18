@@ -1,0 +1,218 @@
+<?xml version="1.0" ?>
+<sdf version='1.7'>
+  <world name='ware_house'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin filename="libignition-gazebo-clock-system.so"
+            name="ignition::gazebo::systems::Clock">
+        <use_sim_time>true</use_sim_time>
+        <time_scaling_factor>1.0</time_scaling_factor>
+    </plugin>
+    <plugin
+        filename="libignition-gazebo-physics-system.so"
+        name="ignition::gazebo::systems::Physics">
+    </plugin>
+    <plugin
+        filename="libignition-gazebo-user-commands-system.so"
+        name="ignition::gazebo::systems::UserCommands">
+    </plugin>
+    <plugin
+        filename="libignition-gazebo-scene-broadcaster-system.so"
+        name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+    
+    
+    <!-- <plugin name='gz::sim::systems::Contact' filename='ignition-gazebo-contact-system'/> -->
+    <!-- <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+     -->
+    
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <!-- <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind> -->
+      </link>
+      <!-- <pose>0 0 0 0 -0 0</pose>
+      <self_collide>false</self_collide> -->
+    </model>
+    
+    <!-- <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/MyWall/model.sdf</uri>
+      <name>wall_block</name>
+      <pose>0 -0 0 0 -0 0</pose>
+    </include> -->
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_right1</name>
+      <pose>4.9814 -9.16828 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_right2</name>
+      <pose>-2.38654 -9.16739 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_back1</name>
+      <pose>8.7099 -5.28895 0.063592 0 0 -1.570796</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_back2</name>
+      <pose>8.7099 2.2155 0.063592 0 0 -1.570796</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_left1</name>
+      <pose>5.07045 6.05671 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_left2</name>
+      <pose>-2.36004 6.05671 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_inside</name>
+      <pose>3.99013 2.17383 0.063592 0 0 -1.570796</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/shelf/model.sdf</uri>
+      <name>shelf1</name>
+      <pose>6.48906 -8.46814 0 0 -0 3.14159</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/shelf/model.sdf</uri>
+      <name>shelf2</name>
+      <pose>1.93725 -8.43145 0 0 -0 3.14159</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_inside2</name>
+      <pose>4.90519 -4.70048 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/pallet_box_mobile/model.sdf</uri>
+      <name>euro_pallet1</name>
+      <pose>3.0 5.25 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/pallet_box_mobile/model.sdf</uri>
+      <name>euro_pallet2</name>
+      <pose>1.0 5.25 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/pallet_box_mobile/model.sdf</uri>
+      <name>euro_pallet3</name>
+      <pose>-1.0 5.25 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/pallet_box_mobile/model.sdf</uri>
+      <name>euro_pallet4</name>
+      <pose>-3.0 5.25 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/pallet_box_mobile/model.sdf</uri>
+      <name>euro_pallet5</name>
+      <pose>-5.0 5.25 0 0 0 0.0</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/aws_robomaker_warehouse_ClutteringA_01/model.sdf</uri>
+      <name>cluttering</name>
+      <pose>-3.0 0.0 0 0 0 -1.57914</pose>
+    </include>
+    
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_front</name>
+      <pose>-6.12385 2.22676 0.063592 0 0 -1.570796</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_front_inside1</name>
+      <pose>-1.93065 -5.32933 0.026264 0 0 -1.57914</pose>
+    </include>
+    <include>
+      <uri>file:///home/yinchheanyun/trailobot_ws/install/trailobot_description/share/trailobot_description/models/GreyWall/model.sdf</uri>
+      <name>grey_wall_front_inside2</name>
+      <pose>-6.11323 -5.32044 0.063592 0 0 -1.570796</pose>
+    </include>
+    
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.1 -0.9</direction>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-3.90827 -4.65526 4.77216 0 0.623643 0.728194</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

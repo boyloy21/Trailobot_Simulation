@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 4.4.3 commit date:2025-04-29, commit time:14:09, hash:802179c51ccc</authoring_tool>
+    </contributor>
+    <created>2025-09-17T10:00:45</created>
+    <modified>2025-09-17T10:00:45</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="Aluminum_-_Satin-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.9607843 0.9607843 0.9647059 1</color>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">1</float>
+            </reflectivity>
+            <index_of_refraction>
+              <float sid="ior">1.5</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="Aluminum_-_Satin-material" name="Aluminum - Satin">
+      <instance_effect url="#Aluminum_-_Satin-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Body1-mesh" name="Body1">
+      <mesh>
+        <source id="Body1-mesh-positions">
+          <float_array id="Body1-mesh-positions-array" count="108">-148 148 0 148 148 0 148 148 20 -148 148 20 0 148 10 -148 2 0 -148 2 20 -148 75 10 2 2 0 2 2 20 -73 2 10 2 -148 0 2 -148 20 2 -73 10 148 -148 0 148 -148 20 75 -148 10 148 0 10 0 0 0 0 -150 0 0 -150 20 0 0 20 0 -75 10 -150 0 0 -150 0 20 -75 0 10 -150 150 0 -150 150 20 -150 75 10 150 150 0 150 150 20 0 150 10 150 -150 0 150 -150 20 150 0 10 75 -150 10</float_array>
+          <technique_common>
+            <accessor source="#Body1-mesh-positions-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Body1-mesh-normals">
+          <float_array id="Body1-mesh-normals-array" count="18">0 -1 0 1 0 0 0 1 0 -1 0 0 0 0 1 0 0 -1</float_array>
+          <technique_common>
+            <accessor source="#Body1-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Body1-mesh-map-0">
+          <float_array id="Body1-mesh-map-0-array" count="432">0 20 0 0 148 10 148 10 0 0 296 0 148 10 296 0 296 20 296 20 0 20 148 10 0 20 0 0 73 10 73 10 0 0 146 0 73 10 146 0 146 20 146 20 0 20 73 10 0 20 0 0 75 10 75 10 0 0 150 0 75 10 150 0 150 20 150 20 0 20 75 10 0 20 0 0 75 10 75 10 0 0 150 0 75 10 150 0 150 20 150 20 0 20 75 10 0 20 0 0 73 10 73 10 0 0 146 0 73 10 146 0 146 20 146 20 0 20 73 10 0 20 0 0 148 10 148 10 0 0 296 0 148 10 296 0 296 20 296 20 0 20 148 10 0 20 0 0 75 10 75 10 0 0 150 0 75 10 150 0 150 20 150 20 0 20 75 10 0 20 0 0 75 10 75 10 0 0 150 0 75 10 150 0 150 20 150 20 0 20 75 10 0 20 0 0 75 10 75 10 0 0 150 0 75 10 150 0 150 20 150 20 0 20 75 10 0 20 0 0 150 10 150 10 0 0 300 0 150 10 300 0 300 20 300 20 0 20 150 10 0 20 0 0 150 10 150 10 0 0 300 0 150 10 300 0 300 20 300 20 0 20 150 10 0 20 0 0 75 10 75 10 0 0 150 0 75 10 150 0 150 20 150 20 0 20 75 10 148 148 -150 150 -148 148 -148 148 -150 150 -150 -150 -148 148 -150 -150 -148 -148 -148 -148 -150 -150 0 -150 -148 -148 0 -150 -2 -148 -2 -148 0 -150 0 0 -2 -148 0 0 -2 2 -2 2 0 0 148 2 148 2 0 0 150 0 148 2 150 0 148 148 148 148 150 0 150 150 148 148 150 150 -150 150 148 148 -150 150 -148 148 -148 148 -150 150 -150 0 -148 148 -150 0 -148 2 -148 2 -150 0 0 0 -148 2 0 0 2 2 2 2 0 0 2 -148 2 -148 0 0 0 -150 2 -148 0 -150 150 -150 -150 150 148 148 150 150 150 150 148 148 148 -148 150 150 148 -148 150 -150 150 -150 148 -148 2 -148</float_array>
+          <technique_common>
+            <accessor source="#Body1-mesh-map-0-array" count="216" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Body1-mesh-vertices">
+          <input semantic="POSITION" source="#Body1-mesh-positions"/>
+        </vertices>
+        <triangles material="Aluminum_-_Satin-material" count="72">
+          <input semantic="VERTEX" source="#Body1-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Body1-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Body1-mesh-map-0" offset="2" set="0"/>
+          <p>3 0 0 0 0 1 4 0 2 4 0 3 0 0 4 1 0 5 4 0 6 1 0 7 2 0 8 2 0 9 3 0 10 4 0 11 6 1 12 5 1 13 7 1 14 7 1 15 5 1 16 0 1 17 7 1 18 0 1 19 3 1 20 3 1 21 6 1 22 7 1 23 9 2 24 8 2 25 10 2 26 10 2 27 8 2 28 5 2 29 10 2 30 5 2 31 6 2 32 6 2 33 9 2 34 10 2 35 12 1 36 11 1 37 13 1 38 13 1 39 11 1 40 8 1 41 13 1 42 8 1 43 9 1 44 9 1 45 12 1 46 13 1 47 15 2 48 14 2 49 16 2 50 16 2 51 14 2 52 11 2 53 16 2 54 11 2 55 12 2 56 12 2 57 15 2 58 16 2 59 2 3 60 1 3 61 17 3 62 17 3 63 1 3 64 14 3 65 17 3 66 14 3 67 15 3 68 15 3 69 2 3 70 17 3 71 21 3 72 18 3 73 22 3 74 22 3 75 18 3 76 19 3 77 22 3 78 19 3 79 20 3 80 20 3 81 21 3 82 22 3 83 24 0 84 23 0 85 25 0 86 25 0 87 23 0 88 18 0 89 25 0 90 18 0 91 21 0 92 21 0 93 24 0 94 25 0 95 27 3 96 26 3 97 28 3 98 28 3 99 26 3 100 23 3 101 28 3 102 23 3 103 24 3 104 24 3 105 27 3 106 28 3 107 30 2 108 29 2 109 31 2 110 31 2 111 29 2 112 26 2 113 31 2 114 26 2 115 27 2 116 27 2 117 30 2 118 31 2 119 33 1 120 32 1 121 34 1 122 34 1 123 32 1 124 29 1 125 34 1 126 29 1 127 30 1 128 30 1 129 33 1 130 34 1 131 20 0 132 19 0 133 35 0 134 35 0 135 19 0 136 32 0 137 35 0 138 32 0 139 33 0 140 33 0 141 20 0 142 35 0 143 15 4 144 30 4 145 2 4 146 2 4 147 30 4 148 27 4 149 2 4 150 27 4 151 3 4 152 3 4 153 27 4 154 24 4 155 3 4 156 24 4 157 6 4 158 6 4 159 24 4 160 21 4 161 6 4 162 21 4 163 9 4 164 9 4 165 21 4 166 12 4 167 12 4 168 21 4 169 20 4 170 12 4 171 20 4 172 15 4 173 15 4 174 20 4 175 33 4 176 15 4 177 33 4 178 30 4 179 1 5 180 32 5 181 14 5 182 14 5 183 32 5 184 19 5 185 14 5 186 19 5 187 11 5 188 11 5 189 19 5 190 18 5 191 11 5 192 18 5 193 8 5 194 8 5 195 18 5 196 5 5 197 5 5 198 18 5 199 23 5 200 5 5 201 23 5 202 26 5 203 32 5 204 1 5 205 29 5 206 29 5 207 1 5 208 0 5 209 29 5 210 0 5 211 26 5 212 26 5 213 0 5 214 5 5 215</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene"/>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
