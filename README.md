@@ -491,6 +491,15 @@ Contributions are welcome! Please follow these steps:
 Please follow [ROS 2 Python style guidelines](https://docs.ros.org/en/humble/The-ROS2-Project/Contributing/Code-Style-Language-Versions.html) and run `colcon test` before submitting.
 
 ---
+## 🎥 Demo — Navigation Testing
+
+<div align="center">
+
+[![Trailobot Navigation Demo](https://img.youtube.com/vi/gmkwULxAtfQ/maxresdefault.jpg)](https://youtu.be/gmkwULxAtfQ)
+
+*Click to watch Trailobot autonomous navigation testing in Gazebo Fortress*
+
+</div>
 
 ## 📄 License
 
