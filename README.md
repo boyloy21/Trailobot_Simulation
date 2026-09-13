@@ -503,7 +503,7 @@ Please follow [ROS 2 Python style guidelines](https://docs.ros.org/en/humble/The
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** by **AI Farm Robotics Factory** ([aifarm.dev](https://aifarm.dev/)) — see the [LICENSE](LICENSE) file for details.
 
 ---
 
